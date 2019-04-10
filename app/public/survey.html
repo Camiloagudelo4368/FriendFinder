@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            color: #777777;
+        }
+
+        .RequiredAdvice {
+            color: red;
+        }
+
+        h2 {
+            margin: 20px 0 30px 0;
+        }
+
+        h3 {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .labelField {
+            margin-bottom: 8px;
+        }
+
+        .container {
+            margin-bottom: 50px;
+        }
+
+        .nonmargin {
+            margin-bottom: 0;
+        }
+
+        .info {
+            font-size: 11px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h2 class="nonmargin">Survey Questions</h2>
+            <i class="info" aria-hidden="true">All questions have been taken from <a
+                    href="http://thepoliticalaffiliationquiz.org/personal-quiz/">http://thepoliticalaffiliationquiz.org/personal-quiz/</a></i>
+        </div>
+        <hr class="my-2">
+        <h3>About You</h3>
+        <label for="">Name <span class="RequiredAdvice">*</span></label>
+        <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+        <br>
+        <label for="">Link to your photo <span class="RequiredAdvice">*</span></label>
+        <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+        <br>
+        <br>
+        <div class="text-center">
+            <strong>Please answer the questions based on </strong><small>(1-Strongly Disagree ...
+                5-Strongly Agree)</small></div>
+        <div id="question1">
+            <h3>Question 1</h3>
+            <label class="form-check-label labelField">In this country, personal choices in life are the primary reason
+                for why someone is poor.</label>
+            <!-- acces from jquery -->
+            <!-- $('input[name=toggle]:checked').val() -->
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion1" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion1" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion1" value="3">
+                    <label class="form-check-label" for="inlineRadio3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion1" value="4">
+                    <label class="form-check-label" for="inlineRadio4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion1" value="5">
+                    <label class="form-check-label" for="inlineRadio5">5</label>
+                </div>
+            </div>
+        </div>
+        <div id="question2">
+            <h3>Question 2</h3>
+            <label class="form-check-label labelField">I prefer whole, natural foods that are organic or
+                non-GMO.</label>
+
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion2" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion2" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion2" value="3">
+                    <label class="form-check-label" for="inlineRadio3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion2" value="4">
+                    <label class="form-check-label" for="inlineRadio4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion2" value="5">
+                    <label class="form-check-label" for="inlineRadio5">5</label>
+                </div>
+            </div>
+        </div>
+        <div id="question3">
+            <h3>Question 3</h3>
+            <label class="form-check-label labelField">There would be less crime if lawbreakers were punished more
+                severely.</label>
+
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion3" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion3" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion3" value="3">
+                    <label class="form-check-label" for="inlineRadio3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion3" value="4">
+                    <label class="form-check-label" for="inlineRadio4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion3" value="5">
+                    <label class="form-check-label" for="inlineRadio5">5</label>
+                </div>
+            </div>
+        </div>
+        <div id="question4">
+            <h3>Question 4</h3>
+            <label class="form-check-label labelField">It is acceptable to discriminate when choosing one’s
+                friends</label>
+
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion4" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion4" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion4" value="3">
+                    <label class="form-check-label" for="inlineRadio3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion4" value="4">
+                    <label class="form-check-label" for="inlineRadio4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion4" value="5">
+                    <label class="form-check-label" for="inlineRadio5">5</label>
+                </div>
+            </div>
+        </div>
+        <div id="question5">
+            <h3>Question 5</h3>
+            <label class="form-check-label labelField">I wish the world did not have nations and we were all part of one
+                big group.</label>
+
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion5" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion5" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion5" value="3">
+                    <label class="form-check-label" for="inlineRadio3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion5" value="4">
+                    <label class="form-check-label" for="inlineRadio4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion5" value="5">
+                    <label class="form-check-label" for="inlineRadio5">5</label>
+                </div>
+            </div>
+        </div>
+        <div id="question6">
+            <h3>Question 6</h3>
+            <label class="form-check-label labelField">I believe that self-expression is more important than
+                self-control.</label>
+
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion6" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion6" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion6" value="3">
+                    <label class="form-check-label" for="inlineRadio3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion6" value="4">
+                    <label class="form-check-label" for="inlineRadio4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion6" value="5">
+                    <label class="form-check-label" for="inlineRadio5">5</label>
+                </div>
+            </div>
+        </div>
+        <div id="question7">
+            <h3>Question 7</h3>
+            <label class="form-check-label labelField">Respect for authority is something all children need to
+                learn.</label>
+
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion7" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion7" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion7" value="3">
+                    <label class="form-check-label" for="inlineRadio3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion7" value="4">
+                    <label class="form-check-label" for="inlineRadio4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion7" value="5">
+                    <label class="form-check-label" for="inlineRadio5">5</label>
+                </div>
+            </div>
+        </div>
+        <div id="question8">
+            <h3>Question 8</h3>
+            <label class="form-check-label labelField">In a fair society, everyone would end up with roughly the same
+                amount of money.</label>
+
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion8" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion8" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion8" value="3">
+                    <label class="form-check-label" for="inlineRadio3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion8" value="4">
+                    <label class="form-check-label" for="inlineRadio4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion8" value="5">
+                    <label class="form-check-label" for="inlineRadio5">5</label>
+                </div>
+            </div>
+        </div>
+        <div id="question9">
+            <h3>Question 9</h3>
+            <label class="form-check-label labelField">There is no price too high to provide quality education to
+                children.</label>
+
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion9" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion9" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion9" value="3">
+                    <label class="form-check-label" for="inlineRadio3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion9" value="4">
+                    <label class="form-check-label" for="inlineRadio4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion9" value="5">
+                    <label class="form-check-label" for="inlineRadio5">5</label>
+                </div>
+            </div>
+        </div>
+        <div id="question10">
+            <h3>Question 10</h3>
+            <label class="form-check-label labelField">Thinking about global climate change, I am concerned for the
+                future of humanity.</label>
+
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion10" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion10" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion10" value="3">
+                    <label class="form-check-label" for="inlineRadio3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion10" value="4">
+                    <label class="form-check-label" for="inlineRadio4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radioQuestion10" value="5">
+                    <label class="form-check-label" for="inlineRadio5">5</label>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <button type="button" class="btn btn-primary btn-lg btn-block"><i class="fa fa-check" aria-hidden="true"></i>
+            Submit</button>
+
+        <hr class="my-2">
+        <a href="http://localhost:8081/api/friends">API Friends list</a>
+        <div class="text-center">
+            <small>Copyright© 2019 Camilo Agudelo</small>
+        </div>
+    </div>
+
+</body>
+
+</html>

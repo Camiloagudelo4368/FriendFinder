@@ -9,6 +9,9 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <style>
         body {
             color: #777777;
@@ -56,10 +59,10 @@
         <hr class="my-2">
         <h3>About You</h3>
         <label for="">Name <span class="RequiredAdvice">*</span></label>
-        <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+        <input type="text" name="" id="name" class="form-control" placeholder="" aria-describedby="helpId">
         <br>
         <label for="">Link to your photo <span class="RequiredAdvice">*</span></label>
-        <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+        <input type="text" name="" id="photo" class="form-control" placeholder="" aria-describedby="helpId">
         <br>
         <br>
         <div class="text-center">
@@ -347,18 +350,126 @@
             </div>
         </div>
 
+        <div>
+            <!-- Modal -->
+            <div class="modal fade text-center" id="modalMatch" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Match</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h2 id="match-name"></h2>
+                            <img id="match-img" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
         <br>
 
-        <button type="button" class="btn btn-primary btn-lg btn-block"><i class="fa fa-check" aria-hidden="true"></i>
+        <button id="submit" type="submit" class="btn btn-primary btn-lg btn-block"><i class="fa fa-check"
+                aria-hidden="true"></i>
             Submit</button>
 
         <hr class="my-2">
-        <a href="http://localhost:8081/api/friends">API Friends list</a>
+        <a href="/api/friends">API Friends list</a>
         <div class="text-center">
             <small>Copyright© 2019 Camilo Agudelo</small>
         </div>
     </div>
+    <script>
+        // Capture the form inputs
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
 
+            // Form validation
+            function validateForm() {
+
+                var valid = true;
+                $(".form-control").each(function () {
+                    if ($(this).val() === "") {
+                        valid = false;
+                    }
+                });
+                var counter = 0;
+                $(".form-check-input").each(function () {
+
+                    if ($(this)[0].checked) {
+                        counter++;
+                    }
+                });
+
+                if (counter < 10) {
+                    valid = false
+                }
+
+                return valid;
+            }
+
+            var q1 = $('input[name=radioQuestion1]:checked').val()
+            var q2 = $('input[name=radioQuestion2]:checked').val()
+            var q3 = $('input[name=radioQuestion3]:checked').val()
+            var q4 = $('input[name=radioQuestion4]:checked').val()
+            var q5 = $('input[name=radioQuestion5]:checked').val()
+            var q6 = $('input[name=radioQuestion6]:checked').val()
+            var q7 = $('input[name=radioQuestion7]:checked').val()
+            var q8 = $('input[name=radioQuestion8]:checked').val()
+            var q9 = $('input[name=radioQuestion9]:checked').val()
+            var q10 = $('input[name=radioQuestion10]:checked').val()
+
+
+            // If all required fields are filled
+            if (validateForm()) {
+                // Create an object for the user"s data
+                var userData = {
+                    name: $("#name").val(),
+                    photo: $("#photo").val(),
+                    scores: [
+                        parseInt(q1),
+                        parseInt(q2),
+                        parseInt(q3),
+                        parseInt(q4),
+                        parseInt(q5),
+                        parseInt(q6),
+                        parseInt(q7),
+                        parseInt(q8),
+                        parseInt(q9),
+                        parseInt(q10)
+                    ]
+                };
+
+                // AJAX post the data to the friends API.
+                $.ajax("/api/friends", {
+                    type: "POST",
+                    data: userData
+                }).then(function (data) {
+                    
+                    
+
+                    // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                    $("#match-name").text(data.name);
+                    $("#match-img").attr("src", data.photo);
+                    $('#modalMatch').modal("show")
+                    // // Show the modal with the best match
+                    // $("#results-modal").modal("toggle");
+
+                });
+            } else {
+                alert("Please fill out all fields before submitting!");
+            }
+        });
+    </script>
 </body>
 
 </html>

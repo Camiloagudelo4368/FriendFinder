@@ -21,12 +21,14 @@ app.get("/api/friends", function(req, res){
 })
 
 
-// app.post("/api/friends",  function(res,res){
-//     var friendObject = new friends();
+app.post("/api/friends",  function(res,res){
+    var friendObject = new friends();
 
-//     friendObject.name = res.name;
-//     friendObject.photo = res.photo;
-//     friendObject.scores = res.scores;
+    friendObject.name = res.name;
+    friendObject.photo = res.photo;
+    friendObject.scores = res.scores;
 
-//     friends.push(friendObject);
-// })
+    friends.push(friendObject);
+
+    return friends
+})

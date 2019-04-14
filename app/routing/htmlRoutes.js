@@ -1,18 +1,24 @@
-var fs = require("fs")
-var result = [];
+var path = require("path");
 
-fs.readFile("./app/data/friends.js", "utf8", function(error, data){
-    if (error) throw error
-    
-    data = data.slice(1, (data.length - 1))
+var routes = {
+    htmlRoutes: function(app) {
+        // Request home
+        app.get("/", function (req, res) {
+            res.sendFile(path.join(__dirname, "../public/home.html"));
+        })
 
-    data.split(",").forEach(element => {
-        result.push(element);    
-    });
+        app.get("/:route", function (req, res) {
 
-})
-
-
-module.exports = {
-    friends: result
+            switch (req.params.route) {
+                case "survey":
+                    res.sendFile(path.join(__dirname, "../public/survey.html"));
+                    break;
+                default:
+                    res.sendFile(path.join(__dirname, "../public/home.html"));
+                    break;
+            }
+        })
+    }
 }
+
+module.exports = routes
